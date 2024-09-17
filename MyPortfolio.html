@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aakriti Portfolio</title>
+    <link href="vendor/bootstrap-5.0.2-dist/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/fontawesome/fontawesome-free-6.5.2-web/css/all.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        body {
+            background-color: rgb(1, 15, 49);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav {
+            padding: 10px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgb(30, 2, 85);
+            font-family: 'Times New Roman', Times, serif;
+            position: relative;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+        }
+
+        nav ul {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li {
+            list-style-type: none;
+            margin: 17px;
+            font-size: 19px;
+            vertical-align: middle;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-family: 'Times New Roman', Times, serif;
+
+        }
+
+        nav ul li a:hover {
+            color: rgb(153, 153, 226);
+            cursor: pointer;
+        }
+
+        .menu-icon {
+            display: none;
+        }
+
+        .menu-icon i {
+            color: #fff;
+            font-size: 30px;
+        }
+
+        @media (max-width:600px) {
+            nav ul {
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                text-align: center;
+                background: rgb(30, 2, 85);
+                gap: 0;
+                overflow: hidden;
+            }
+
+
+            .menu-icon {
+                display: block;
+            }
+
+            #menuList {
+                transition: all 0.5s;
+            }
+        }
+
+        .firstSection {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .leftSection {
+            padding: 80px 5%;
+            flex: 1;
+        }
+
+        .rightSection {
+            padding: 30px 5%;
+            flex: 1;
+            text-align: center;
+        }
+
+        section div i {
+            color: rgb(37, 139, 160);
+            margin: 6px;
+            padding: 5px;
+            border-style: ridge;
+            border-color: rgb(37, 139, 160);
+        }
+
+        section div i:hover {
+            color: rgb(88, 200, 222);
+            border-color: rgb(88, 200, 222);
+        }
+
+        .btn-sm,
+        #submit_button {
+            color: rgb(111, 218, 239);
+            background-color: rgb(17, 121, 142);
+            border: none;
+            padding: 10px 20px;
+        }
+
+        .btn-sm:hover,
+        #submit_button:hover {
+            color: azure;
+        }
+
+        .secondSection {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .cards {
+            padding: 30px;
+            background-color: rgb(30, 2, 85);
+            border-radius: 8px;
+
+        }
+
+
+        .thirdSection, .fourthSection,.fifthSection {
+            margin-top: 70px;
+        }
+
+
+        .thirdSection .row div {
+            margin-bottom: 20px;
+        }
+
+        .progress {
+            height: 5px;
+            background-color: rgb(10, 227, 28)
+        }
+
+        form {
+            position: relative;
+        }
+
+        form input,
+        form textarea {
+            border: none;
+            outline: none;
+            width: 100%;
+            padding: 12px;
+            background: #555557;
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            border-radius: 0.5rem;
+        }
+
+        form textarea {
+            resize: none;
+            height: 180px;
+        }
+
+        @media (max-width: 767px) {
+            .firstSection {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .leftSection,
+            .rightSection {
+                padding: 30px 5%;
+            }
+        }
+
+        .heading {
+            color: rgb(128, 124, 124);
+            text-decoration: underline;
+            text-decoration-color: rgb(128, 124, 124);
+            text-decoration-thickness: 1px;
+            text-underline-offset: 8px;
+        }
+
+        footer{text-align: center;
+            background-color: rgb(30, 2, 85);
+            padding:15px;
+            margin-bottom: 0%;
+            
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo"><img src="online-resume.png" alt="">&nbsp; Aakriti's Portfolio</div>
+        <ul id="menuList">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact Me</a></li>
+        </ul>
+        <div class="menu-icon">
+            <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+        </div>
+    </nav>
+
+
+    <section class="firstSection" id="home">
+        <div class="leftSection">
+            <h4>Hey! I am </h4>
+            <h2 style="color: rgb(180, 174, 174);">Aakriti Jha</h2>
+            <h4>I am a</h4>
+            <h3 style="color:rgb(168, 106, 225);"><span id="element"></span></h3>
+            <div>
+                <i class="fa-brands fa-facebook"></i><i class="fa-brands fa-square-instagram"></i><i
+                    class="fa-brands fa-twitter "></i><i class="fa-brands fa-linkedin "></i><i
+                    class="fa-brands fa-github"></i>
+            </div>
+            <button class="btn-sm mt-4">Download Resume</button>
+        </div>
+        <div class="rightSection">
+            <img class="rounded-circle img-fluid"
+                src="https://media.istockphoto.com/id/1164538944/vector/woman-with-laptop-studying-or-working-concept-table-with-books-lamp-coffee-cup-vector.jpg?s=612x612&w=0&k=20&c=VhUj_AZoUnilUKdRessjsK6JQUjXCfum7RQyuzOr6_0="
+                alt="Profile Image">
+        </div>
+    </section>
+
+    <section class="secondSection" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-sm-6 mb-4">
+                    <img class="img-fluid"
+                        src="https://www.mordeo.org/files/uploads/2018/10/Gorgeous-Asian-Girl-Beauty-4K-Ultra-HD-Mobile-Wallpaper.jpg"
+                        alt="" class="img-fluid rounded" style="width: 74%; height:30%;">
+                </div>
+                <div class="col-sm-6 mb-4 container-fluid">
+                    <div class="cards">
+
+                        <h1 class="heading" style="color:rgb(128, 124, 124);">About me</h1>
+
+
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia dolores, distinctio maxime
+                            pariatur explicabo at debitis enim quibusdam blanditiis laboriosam unde accusantium
+                            assumenda magni accusamus harum! Tenetur voluptate commodi quo suscipit earum nisi dolores
+                            optio beatae perspiciatis. Porro sapiente dolor, veniam eligendi eos fuga reiciendis ullam
+                            aspernatur repudiandae quas qui maiores eveniet. Quod totam, fuga nostrum consequuntur sequi
+                            quas quibusdam nisi, quaerat in impedit rerum atque, corporis quidem numquam debitis
+                            voluptate facilis vero beatae at exercitationem tempora ipsam! Eaque tenetur fugit impedit
+                            eligendi sunt adipisci ut modi illo optio nesciunt facere nobis libero, numquam molestiae
+                            perspiciatis laboriosam possimus est hic!Lorem ipsum dolor sit amet consectetur, adipisicing
+                            elit. Ipsam tenetur nesciunt at neque minus suscipit provident illo sapiente aliquam quidem,
+                            iste pariatur odio facere esse fugit nobis dolorum consectetur quos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="thirdSection" id="skills">
+        <h1 class="heading" style="text-align:center;">My skills</h1>
+
+        <div class="container" style="margin-top:25px;">
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <span><i class="fa-brands fa-js"></i> JavaScript</span>
+                    <div style="background-color:black;width:400px;">
+                        <div class="progress mt-2" style="width: 50%;">
+                            <div class="progress-bar bg-success"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <span><i class="fa-solid fa-code"></i> Programming</span>
+                    <div style="background-color:black;width:400px;">
+                        <div class="progress mt-2" style="width: 77%;">
+                            <div class="progress-bar bg-success"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <span><i class="fa-brands fa-python"></i> Python</span>
+                    <div style="background-color:black;width:400px;">
+                        <div class="progress mt-2" style="width: 80%;">
+                            <div class="progress-bar bg-success"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <span><i class="fa-solid fa-database"></i> SQL</span>
+                    <div style="background-color:black;width:400px;">
+                        <div class="progress mt-2" style="width: 60%;">
+                            <div class="progress-bar bg-success"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <span><i class="fa-solid fa-database"></i> MERN</span>
+                    <div style="background-color:black;width:400px;">
+                        <div class="progress mt-2" style="width: 69%;">
+                            <div class="progress-bar bg-success"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <span><i class="fa-solid fa-database"></i> UI/UX</span>
+                    <div style="background-color:black;width:400px;">
+                        <div class="progress mt-2" style="width: 56%;">
+                            <div class="progress-bar bg-success"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section class="fourthSection animationtext4" id="projects">
+        <h1 class="heading" style="text-align:center;">My Projects</h1>
+
+        <div class="container">
+            <div class="row mt-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card" style="background-color: rgb(30, 2, 85); color: white;">
+                        <img src="https://via.placeholder.com/150" class="card-img-top" alt="Project 2">
+                       
+                        
+                        <div class="card-body">
+                            <h5 class="card-title">Project 1</h5>
+                            <p class="card-text">Description of Project 1</p>
+                            <a href="#" class="btn btn-sm">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card" style="background-color: rgb(30, 2, 85); color: white;">
+                        <img src="https://via.placeholder.com/150" class="card-img-top" alt="Project 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Project 2</h5>
+                            <p class="card-text">Description of Project 2</p>
+                            <a href="#" class="btn btn-sm">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card" style="background-color: rgb(30, 2, 85); color: white;">
+                        <img src="https://via.placeholder.com/150" class="card-img-top" alt="Project 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Project 3</h5>
+                            <p class="card-text">Description of Project 3</p>
+                            <a href="#" class="btn btn-sm">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section class="fifthSection animationtext5" id="contact">
+        <h1 class="heading" style="text-align:center;">Contact Me</h1>
+
+        <div class="container">
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-8">
+                    <form>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="name" placeholder="Your Name">
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" id="email" placeholder="Your Email">
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" id="message" placeholder="Your Message"></textarea>
+                        </div>
+                        <button type="submit" class="btn" id="submit_button">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center text-white mt-4">
+        © 2024 Aakriti Jha. All rights reserved.
+    </footer>
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Student', 'Coder', 'Front-end Web developer', 'AI-ML enthusiast'],
+            typeSpeed: 50,
+            backSpeed: 50,
+            loop: true
+        });
+
+        let menuList = document.getElementById("menuList")
+        menuList.style.maxHeight = "0px";
+
+        function toggleMenu() {
+            if (menuList.style.maxHeight == "0px") {
+                menuList.style.maxHeight = "300px";
+            }
+            else {
+                menuList.style.maxHeight = "0px";
+            }
+        }
+
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"
+        integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="vendor/bootstrap-5.0.2-dist/js/bootstrap.js"></script>
+
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
+</body>
+
+</html>
